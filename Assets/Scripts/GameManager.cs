@@ -8,10 +8,24 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;
     private BoardManager boardScript;
-    private int level = 3;
+    public int level = 1;
     public float levelStartDelay = 2f;
     public int playerChocoPoints = 100;
+    public Player player;
+    private List<Enemy> enemies;
 
+    public int GetLevel()
+    {
+        return level;
+    }
+
+    void Start()
+    {
+        if (level != 1)
+        {
+            Destroy(gameObject);
+        }
+    }
     void Awake()
     {
         
@@ -21,8 +35,7 @@ public class GameManager : MonoBehaviour
         
         else if (instance != this) 
             Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
+        
         boardScript = GetComponent<BoardManager>();
         InitGame();
     }
@@ -41,6 +54,10 @@ public class GameManager : MonoBehaviour
     {
         boardScript.SetupScene(level);
 
+    }
+    public void AddEnemyToList(Enemy script)
+    {
+        enemies.Add(script);
     }
 
     void Update()
