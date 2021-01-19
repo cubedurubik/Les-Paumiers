@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour
     public int playerChocoPoints = 100;
     public Player player;
     private List<Enemy> enemies;
-
+    public AudioSource audio;
+    public AudioClip music;
+    //public MusicManager musical;
     public int GetLevel()
     {
         return level;
