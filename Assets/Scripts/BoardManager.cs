@@ -61,14 +61,14 @@ public class BoardManager : MonoBehaviour
                     toInstantiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
                 }
 
-                GameObject instance = Instantiate(toInstantiate, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
+                GameObject instance = Instantiate(toInstantiate, new Vector3(x, y, 1f), Quaternion.identity) as GameObject;
                 instance.transform.SetParent(boardHolder);
 
             }
         }
     }
 
-    Vector3 RandomPosition() //retourne une position aléatoire
+    Vector3 RandomPosition() //retourne une position alï¿½atoire
     {
         int randomIndex = Random.Range(0, gridPositions.Count);
         Vector3 randomPosition = gridPositions[randomIndex];
@@ -76,7 +76,7 @@ public class BoardManager : MonoBehaviour
         return randomPosition;
     }
 
-    void LayoutObjectAtRandom(GameObject[] tileArray, int min, int max) //choisi aléatoirement les objets a placer 
+    void LayoutObjectAtRandom(GameObject[] tileArray, int min, int max) //choisi alï¿½atoirement les objets a placer 
     {
         int objectCount = Random.Range(min, max + 1);
         for (int i = 0; i < objectCount; i++)
