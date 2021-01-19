@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public static Player instance;
     public int wallDamage = 1;
     public int pointsPerChoco = 10;
     public float restartLevelDelay = 1f;
@@ -31,23 +30,12 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
         chocolat = GameManager.instance.playerChocoPoints;
         boxCollider = GetComponent<BoxCollider2D>();
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     void FixedUpdate()
     {
@@ -84,29 +72,28 @@ public class Player : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D (Collider2D other)//permet au player d'interagir avec les autres objets
+    private void OnTRiggerEnter2D(Collider2D other)//permet au player d'interagir avec les autres objets
     {
     if (other.tag == "Exit")
-        {
-            Invoke("Restart", restartLevelDelay);
-            enabled = false;
-        }
+    {
+       Invoke("Restart", restartLevelDelay);
+       enabled = false;
+    }
 
     else if (other.tag == "Chocolat")
-        {
-            chocolat += pointsPerChoco;
-            other.gameObject.SetActive(false);
-        }
-        
-    else if (other.tag == "Wall")
-        {
-            other.gameObject.GetComponent<Wall>().DamageWall(wallDamage);
-        }
+    {
+       chocolat += pointsPerChoco;
+       other.gameObject.SetActive(false);
+    }
 
         
     }
 
-
+    void OnCantMove<T>(T component) //on definit ce qui se passe si on est face a un mur
+    {
+        Wall hitWall = component as Wall;
+        hitWall.DamageWall(wallDamage);
+    }
 
     private void Restart()
     {

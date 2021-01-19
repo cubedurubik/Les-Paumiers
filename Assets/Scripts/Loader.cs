@@ -7,13 +7,11 @@ public class Loader : MonoBehaviour
    
     public GameObject gameManager;            //GameManager prefab to instantiate.
     
-    void Start()
+    void Awake()
     {
         if (GameManager.instance == null)
         {
-            Destroy(gameObject);
             Instantiate(gameManager);
-            
         }
     }
 }
