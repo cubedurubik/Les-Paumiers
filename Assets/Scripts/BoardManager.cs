@@ -21,7 +21,7 @@ public class BoardManager : MonoBehaviour
 
     public int columns = 8;
     public int rows = 8;
-    public Count wallCount = new Count(5, 10);
+    public Count wallCount = new Count(8, 15);
     public Count foodCount = new Count(1, 2);
     public GameObject exit;
     public GameObject player;
@@ -31,6 +31,7 @@ public class BoardManager : MonoBehaviour
     public GameObject[] foodTiles;
     public GameObject[] enemyTiles;
     public GameObject map;
+    public int enemyCount;
 
     private Transform boardHolder;
     private List<Vector3> gridPositions = new List<Vector3>();
@@ -87,7 +88,7 @@ public class BoardManager : MonoBehaviour
             objet.transform.SetParent(map.transform);
         }
     }
-    public void SetupScene(int level)// en gros c'est le main
+    public void SetupScene(float level)// en gros c'est le main
     {
         if (map != null)
         {
@@ -98,15 +99,16 @@ public class BoardManager : MonoBehaviour
         {
             map = Instantiate(new GameObject("map"));
         }
-
+        
         BoardSetup();
         InitialiseList();
         LayoutObjectAtRandom(wallTiles, wallCount.minimum, wallCount.maximum);
-        LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodCount.maximum);
-        int enemyCount = (int)Mathf.Log(level, 2f);
+        LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodCount.maximum); 
+        enemyCount = (int)(level * 0.5f);
+        Instantiate(player, new Vector3(0, 0, 0f), Quaternion.identity);
         LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
         Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);  
-        Instantiate(player, new Vector3(0, 0, 0f), Quaternion.identity);
+        
 
         
     }

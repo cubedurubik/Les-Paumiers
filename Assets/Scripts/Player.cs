@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public float restartLevelDelay = 1f;
     public int pointsLossAttack = 1;
 
+    private GameManager gameM;
     private Animator animator;
     public int chocolat = 100;
     public float speed = 2;
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        
+        gameM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         chocolat = GameManager.instance.playerChocoPoints;
         boxCollider = GetComponent<BoxCollider2D>();
         rb2d = GetComponent<Rigidbody2D>();
@@ -88,8 +89,9 @@ public class Player : MonoBehaviour
     {
     if (other.tag == "Exit")
         {
-            Invoke("Restart", restartLevelDelay);
-            enabled = false;
+            transform.position = new Vector2(0,0);
+            gameM.OnLevelWasLoaded();
+            Destroy(other.gameObject);
         }
 
     else if (other.tag == "Chocolat")

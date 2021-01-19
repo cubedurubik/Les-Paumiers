@@ -21,10 +21,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if (level != 1)
-        {
-            Destroy(gameObject);
-        }
+        
     }
     void Awake()
     {
@@ -35,16 +32,17 @@ public class GameManager : MonoBehaviour
         
         else if (instance != this) 
             Destroy(gameObject);
-        
+      
         boardScript = GetComponent<BoardManager>();
         InitGame();
     }
 
-    void OnLevelWasLoaded(int index)
+    public void OnLevelWasLoaded()
     {
         level++;
         InitGame();
     }
+
     public void GameOver()
     {
         enabled = false;
@@ -62,6 +60,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        
 
     }
 }

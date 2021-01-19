@@ -1,0 +1,588 @@
+fileFormatVersion: 2
+guid: cb7215bddf361ec4a9d477f22bc0b7c4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7129095830132715352
+    second: lyn_col_edition_detourage_choco_detour_0
+  - first:
+      213: 6553087264697831589
+    second: lyn_col_edition_detourage_choco_detour_1
+  - first:
+      213: -7582482019828338276
+    second: lyn_col_edition_detourage_choco_detour_2
+  - first:
+      213: 6635776640494114531
+    second: lyn_col_edition_detourage_choco_detour_3
+  - first:
+      213: -9214844482040138738
+    second: lyn_col_edition_detourage_choco_detour_4
+  - first:
+      213: 2727462301139595423
+    second: lyn_col_edition_detourage_choco_detour_5
+  - first:
+      213: -7656921481117343054
+    second: lyn_col_edition_detourage_choco_detour_6
+  - first:
+      213: -2996228511897550696
+    second: lyn_col_edition_detourage_choco_detour_7
+  - first:
+      213: 5096830729398970810
+    second: lyn_col_edition_detourage_choco_detour_8
+  - first:
+      213: -2921295540642291304
+    second: lyn_col_edition_detourage_choco_detour_9
+  - first:
+      213: -1434405408193822074
+    second: lyn_col_edition_detourage_choco_detour_10
+  - first:
+      213: -4811927330459784105
+    second: lyn_col_edition_detourage_choco_detour_11
+  - first:
+      213: -1726542024210171740
+    second: lyn_col_edition_detourage_choco_detour_12
+  - first:
+      213: 8968158913799034963
+    second: lyn_col_edition_detourage_choco_detour_13
+  - first:
+      213: -3947035724976861101
+    second: lyn_col_edition_detourage_choco_detour_14
+  - first:
+      213: 886362609166989288
+    second: lyn_col_edition_detourage_choco_detour_15
+  - first:
+      213: 2506057092624486890
+    second: lyn_col_edition_detourage_choco_detour_16
+  - first:
+      213: 5347815550367730805
+    second: lyn_col_edition_detourage_choco_detour_17
+  - first:
+      213: 2323423378376228905
+    second: lyn_col_edition_detourage_choco_detour_21
+  - first:
+      213: -2351728945672803802
+    second: lyn_col_edition_detourage_choco_detour_22
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 731
+        width: 98
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a098333d1d501d90800000000000000
+      internalID: -7129095830132715352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_1
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 739
+        width: 97
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a05372c52e31fa50800000000000000
+      internalID: 6553087264697831589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_2
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 738
+        width: 97
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c917854d6cc95c690800000000000000
+      internalID: -7582482019828338276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_3
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 741
+        width: 98
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e69c7952b3071c50800000000000000
+      internalID: 6635776640494114531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_4
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 742
+        width: 97
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e04778314cb4e1080800000000000000
+      internalID: -9214844482040138738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_5
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 740
+        width: 99
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90f1bd1384e9d520800000000000000
+      internalID: 2727462301139595423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_6
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 455
+        width: 102
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b261f42b762db590800000000000000
+      internalID: -7656921481117343054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_7
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 466
+        width: 100
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 890037a0b024b66d0800000000000000
+      internalID: -2996228511897550696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_8
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 479
+        width: 100
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab9ee125b849bb640800000000000000
+      internalID: 5096830729398970810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_9
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 464
+        width: 98
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8916518fe297577d0800000000000000
+      internalID: -2921295540642291304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_10
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 473
+        width: 98
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68245bc81e7f71ce0800000000000000
+      internalID: -1434405408193822074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_11
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 634
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c63fe6699983db0800000000000000
+      internalID: -4811927330459784105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_12
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 646
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a83b253d271a08e0800000000000000
+      internalID: -1726542024210171740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_13
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 578
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3589e3a440d457c70800000000000000
+      internalID: 8968158913799034963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_14
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 587
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3505af0abef4939c0800000000000000
+      internalID: -3947035724976861101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_15
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 559
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7369dc81efc4c00800000000000000
+      internalID: 886362609166989288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_16
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 225
+        width: 235
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae11bb8e5ad47c220800000000000000
+      internalID: 2506057092624486890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_17
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 419
+        width: 131
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c8afbb8e1473a40800000000000000
+      internalID: 5347815550367730805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_21
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 233
+        width: 264
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92004faa0457e3020800000000000000
+      internalID: 2323423378376228905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lyn_col_edition_detourage_choco_detour_22
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 27
+        width: 107
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a2b21ebfafc5fd0800000000000000
+      internalID: -2351728945672803802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

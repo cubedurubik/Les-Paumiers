@@ -4,32 +4,37 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField]
     private Transform target;
-    public float speed;
+    public float speed=1;
     public int playerDamage=5;
-
+    //public static Vector2 MoveTowards(Vector2 current, Vector2 target, float maxDistanceDelta);
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
-    public void MoveEnemy()
+    void FixedUpdate()
     {
-        int xDir = 0;
+
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime); 
+       /* int xDir = 0;
         int yDir = 0;
         if (Mathf.Abs(target.position.x - transform.position.x) < float.Epsilon)
             yDir = target.position.y > transform.position.y ? 1 : -1;
         else
             xDir = target.position.x > transform.position.x ? 1 : -1;
 
+        float moveHorizontal = Input.GetAxis("Horizontal");
 
+        float moveVertical = Input.GetAxis("Vertical");
+
+        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        transform.Translate(Vector2.up * xDir*speed * Time.fixedDeltaTime);
+        transform.Translate(Vector2.left * yDir*speed * Time.fixedDeltaTime);
+*/
     }
-    void OnTriggerEnter2D<T>(T component)
-    {
-        Player hitPlayer = component as Player;
-        hitPlayer.LoseChoco(playerDamage);
 
-
-
-    }
+  
+    
 
 }

@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f5d4b015033b143a8a68bff6414f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
+  levelStartDelay: 2
+  playerChocoPoints: 100
+  player: {fileID: 0}
 --- !u!114 &7948071049251808194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,5 +62,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   columns: 16
   rows: 16
+  wallCount:
+    minimum: 5
+    maximum: 10
+  foodCount:
+    minimum: 1
+    maximum: 2
+  exit: {fileID: 6784525828439792674, guid: 5f6dd166c7c60054f8f538ca1ac82292, type: 3}
+  player: {fileID: 5069939577554557271, guid: 0213b90c7bbcd2b4a903fadad35f734a, type: 3}
   floorTiles: []
   outerWallTiles: []
+  wallTiles: []
+  foodTiles: []
+  enemyTiles: []
+  map: {fileID: 0}
