@@ -62,14 +62,14 @@ public class BoardManager : MonoBehaviour
                     toInstantiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
                 }
 
-                GameObject instance = Instantiate(toInstantiate, new Vector3(x, y, 1f), Quaternion.identity) as GameObject;
+                GameObject instance = Instantiate(toInstantiate, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
                 instance.transform.SetParent(boardHolder);
 
             }
         }
     }
 
-    Vector3 RandomPosition() //retourne une position alï¿½atoire
+    Vector3 RandomPosition() //retourne une position aléatoire
     {
         int randomIndex = Random.Range(0, gridPositions.Count);
         Vector3 randomPosition = gridPositions[randomIndex];
@@ -77,7 +77,7 @@ public class BoardManager : MonoBehaviour
         return randomPosition;
     }
 
-    void LayoutObjectAtRandom(GameObject[] tileArray, int min, int max) //choisi alï¿½atoirement les objets a placer 
+    void LayoutObjectAtRandom(GameObject[] tileArray, int min, int max) //choisi aléatoirement les objets a placer 
     {
         int objectCount = Random.Range(min, max + 1);
         for (int i = 0; i < objectCount; i++)
@@ -105,7 +105,7 @@ public class BoardManager : MonoBehaviour
         LayoutObjectAtRandom(wallTiles, wallCount.minimum, wallCount.maximum);
         LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodCount.maximum); 
         enemyCount = (int)(level * 0.5f);
-        Instantiate(player, new Vector3(0, 0, 0f), Quaternion.identity);
+        Instantiate(player, new Vector3(5, 0, 0f), Quaternion.identity);
         LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
         Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);  
         

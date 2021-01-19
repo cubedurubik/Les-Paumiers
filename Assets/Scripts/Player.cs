@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb2d;
     private BoxCollider2D boxCollider;
 
+    public GameObject projectile;
+
 
     private void onDisable() //re charge la valeur de la food pour le prochain lvl
     {
@@ -80,6 +82,13 @@ public class Player : MonoBehaviour
             transform.Translate(Vector2.left * speed * Time.fixedDeltaTime);
         }
 
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Instantiate(projectile, transform.position, Quaternion.identity);
+            chocolat -= 2;
+            checkIfGameOver();
+        }
+
 
     }
 
@@ -108,6 +117,15 @@ public class Player : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.tag == "Enemy")
+        {
+            chocolat -= 10;
+            checkIfGameOver();
+        }
+    }
+
 
 
     private void Restart()
@@ -122,13 +140,8 @@ public class Player : MonoBehaviour
         checkIfGameOver();
     }
 
-    public void Attack()
-    {
-        
-        animator.SetTrigger("playerAttack");
-        chocolat -= pointsLossAttack;
-        checkIfGameOver();
-    }
+   
+   
 
     private void checkIfGameOver()
     {

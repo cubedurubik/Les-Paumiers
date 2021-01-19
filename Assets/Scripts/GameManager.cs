@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         enabled = false;
     }
 
+
     void InitGame()
     {
         boardScript.SetupScene(level);

@@ -7,7 +7,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private Transform target;
     public float speed=1;
-    public int playerDamage=5;
+    public GameObject projectile;
+    public int hp = 5;
     //public static Vector2 MoveTowards(Vector2 current, Vector2 target, float maxDistanceDelta);
     void Start()
     {
@@ -34,7 +35,22 @@ public class Enemy : MonoBehaviour
 */
     }
 
-  
-    
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.tag == "Weapon")
+        {
+            hp -= 5;
+            if (hp <= 0)
+            {
+                enabled = false;
+
+            }
+        }
+    }
+
+
+
+
+
 
 }
