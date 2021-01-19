@@ -11,7 +11,6 @@ public class Loader : MonoBehaviour
     {
         if (GameManager.instance == null)
         {
-            Destroy(gameObject);
             Instantiate(gameManager);
             
         }
