@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveForward : MonoBehaviour
 {
     public float speed = 40.0f;
+    public string nomTag;
    
 
     // Start is called before the first frame update
@@ -21,10 +22,11 @@ public class MoveForward : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if ((other.collider.tag == "Wall" )|| (other.collider.tag == "OuterWall"))
+        if ((other.collider.tag == "Wall" )|| (other.collider.tag == "OuterWall") || (other.collider.tag == nomTag))
         {
             enabled = false;
         }
+        
         
     }
 }
