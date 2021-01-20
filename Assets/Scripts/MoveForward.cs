@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveForward : MonoBehaviour
 {
     public float speed = 40.0f;
-    public string nomTag;
+   
    
 
     // Start is called before the first frame update
@@ -15,16 +15,16 @@ public class MoveForward : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        transform.Translate(Vector2.up * Time.fixedDeltaTime * speed);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if ((other.collider.tag == "Wall" )|| (other.collider.tag == "OuterWall") || (other.collider.tag == nomTag))
+        if ((other.collider.tag == "Wall" )|| (other.collider.tag == "OuterWall"))
         {
-            enabled = false;
+            Destroy(gameObject);
         }
         
         

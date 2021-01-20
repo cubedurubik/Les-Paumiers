@@ -9,9 +9,11 @@ public class Enemy : MonoBehaviour
     public float speed=1;
     public GameObject projectile;
     public int hp = 5;
+    public BoardManager board;
     //public static Vector2 MoveTowards(Vector2 current, Vector2 target, float maxDistanceDelta);
     void Start()
     {
+        board = GameObject.FindGameObjectWithTag("GM").GetComponent<BoardManager>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
     void FixedUpdate()
@@ -42,13 +44,25 @@ public class Enemy : MonoBehaviour
             hp -= 5;
             if (hp <= 0)
             {
-                enabled = false;
-
+                Destroy(gameObject);
+                Destroy(other.collider.gameObject);
+                
+                
+          
+                    
+                        board.enemyInstantiate.Remove(gameObject);
+                    
+                    
+                
+                
             }
         }
     }
 
-
+    /*public void GameOver()
+    {
+        enabled = false;
+    }*/
 
 
 

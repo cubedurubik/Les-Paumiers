@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -25,7 +26,6 @@ public class BoardManager : MonoBehaviour
     public Count foodCount = new Count(1, 2);
     public GameObject exit;
     public GameObject player;
-    public GameObject chocoball;
     public GameObject[] floorTiles;
     public GameObject[] outerWallTiles;
     public GameObject[] wallTiles;
@@ -33,6 +33,7 @@ public class BoardManager : MonoBehaviour
     public GameObject[] enemyTiles;
     public GameObject map;
     public int enemyCount;
+    public List<GameObject> enemyInstantiate = new List<GameObject>();
 
     private Transform boardHolder;
     private List<Vector3> gridPositions = new List<Vector3>();
@@ -70,7 +71,7 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-    Vector3 RandomPosition() //retourne une position alï¿½atoire
+    Vector3 RandomPosition() //retourne une position aléatoire
     {
         int randomIndex = Random.Range(0, gridPositions.Count);
         Vector3 randomPosition = gridPositions[randomIndex];
@@ -78,7 +79,7 @@ public class BoardManager : MonoBehaviour
         return randomPosition;
     }
 
-    void LayoutObjectAtRandom(GameObject[] tileArray, int min, int max) //choisi alï¿½atoirement les objets a placer 
+    void LayoutObjectAtRandom(GameObject[] tileArray, int min, int max, int index) //choisi aléatoirement les objets a placer 
     {
         int objectCount = Random.Range(min, max + 1);
         for (int i = 0; i < objectCount; i++)
@@ -87,6 +88,10 @@ public class BoardManager : MonoBehaviour
             GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
             GameObject objet = Instantiate(tileChoice, randomPosition, Quaternion.identity);
             objet.transform.SetParent(map.transform);
+            if (index == 1)
+            {
+                enemyInstantiate.Add(objet);
+            }
         }
     }
     public void SetupScene(float level)// en gros c'est le main
@@ -103,14 +108,21 @@ public class BoardManager : MonoBehaviour
         
         BoardSetup();
         InitialiseList();
-        LayoutObjectAtRandom(wallTiles, wallCount.minimum, wallCount.maximum);
-        LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodCount.maximum); 
+        LayoutObjectAtRandom(wallTiles, wallCount.minimum, wallCount.maximum, 0);
+        LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodCount.maximum, 0); 
         enemyCount = (int)(level * 0.5f);
-        Instantiate(player, new Vector3(5, 0, 1f), Quaternion.identity);
-        LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
-        Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);  
-        Instantiate(chocoball, new Vector3(-1, -1, 0f), Quaternion.identity);
+        Instantiate(player, new Vector3(0, 0, 0f), Quaternion.identity);
+        LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount, 1);
+        StartCoroutine(CoroutineExit());
+          
+        
 
         
+    }
+
+    IEnumerator CoroutineExit()
+    {
+        yield return new WaitUntil(() => enemyInstantiate.Count == 0);
+        Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);
     }
 }

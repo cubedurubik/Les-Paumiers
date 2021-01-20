@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         gameM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         chocolat = GameManager.instance.playerChocoPoints;
         boxCollider = GetComponent<BoxCollider2D>();
@@ -52,14 +53,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(projectile, transform.position, Quaternion.identity);
+            chocolat -= 2;
+            checkIfGameOver();
+        }
+    }
+
     void FixedUpdate()
     {
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
-
-        float moveVertical = Input.GetAxis("Vertical");
-
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
         //rb2d.AddForce(movement * speed);
         if (Input.GetKey(KeyCode.UpArrow))
@@ -82,12 +88,7 @@ public class Player : MonoBehaviour
             transform.Translate(Vector2.left * speed * Time.fixedDeltaTime);
         }
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Instantiate(projectile, transform.position, Quaternion.identity);
-            chocolat -= 2;
-            checkIfGameOver();
-        }
+      
 
 
     }
@@ -109,7 +110,7 @@ public class Player : MonoBehaviour
             other.gameObject.SetActive(false);
         }
         
-    else if (other.tag == "Wall")
+    else if (other.tag  == "Wall")
         {
             other.gameObject.GetComponent<Wall>().DamageWall(wallDamage);
         }
@@ -147,7 +148,9 @@ public class Player : MonoBehaviour
     {
         if (chocolat <= 0)
         {
-            GameManager.instance.GameOver();
+            animator.SetBool("Mort", true);
+            enabled = false;
+            //gameM.Supp();
         }
     }
 

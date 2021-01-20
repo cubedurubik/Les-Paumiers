@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float levelStartDelay = 2f;
     public int playerChocoPoints = 100;
     public Player player;
+    [SerializeField]
     private List<Enemy> enemies;
 
     public int GetLevel()
@@ -43,9 +44,18 @@ public class GameManager : MonoBehaviour
         InitGame();
     }
 
-    public void GameOver()
+    public void Supp()
     {
-        enabled = false;
+        if (player.enabled == true)
+        {
+            Debug.Log("accessIf");
+            foreach (GameObject enemy in boardScript.enemyTiles)
+            {
+                Debug.Log("accessForeach : "+ enemy);
+                /*enemy.GetComponent<Enemy>().GameOver();*/
+            }
+
+        }
     }
 
 
