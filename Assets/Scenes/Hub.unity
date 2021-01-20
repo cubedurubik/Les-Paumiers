@@ -1837,7 +1837,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 2054579279}
   loop: {fileID: 1427657642}
-  music: []
+  music:
+  - {fileID: 8300000, guid: e46c60ac61995614ab5b564e22401625, type: 3}
+  - {fileID: 8300000, guid: 9ab85ebfcf91533418e888a8c398fab8, type: 3}
+  valid: {fileID: 8300000, guid: 11c239b5f89aa6140bcc717adc789723, type: 3}
+  canvas: {fileID: 457249911}
+  dialogue: 1
 --- !u!1 &1950472147
 GameObject:
   m_ObjectHideFlags: 0

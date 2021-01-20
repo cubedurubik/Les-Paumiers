@@ -7,7 +7,9 @@ public class Dialogue : MonoBehaviour
     public AudioSource audio;
     public AudioSource loop;
     public AudioClip[] music;
-
+    public AudioClip valid;
+    public GameObject canvas;
+    public bool dialogue=true;
     // Start is called before the first frame update
 
     void Awake()
@@ -23,9 +25,14 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!audio.isPlaying)
+        if (!audio.isPlaying && !loop.isPlaying)
         {
             playNext();
+        }
+        if ( (Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.Z)||Input.GetKeyDown(KeyCode.Mouse0)) && dialogue )
+        {
+            canvas.SetActive(false);
+            AudioSource.PlayClipAtPoint(valid, transform.position);
         }
     }
     void playNext(){
