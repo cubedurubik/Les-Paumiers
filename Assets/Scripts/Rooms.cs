@@ -16,10 +16,14 @@ cela créra des chemins plus ou moins longs.
 */
 public static LittleRoom[] mainRooms;  //tableau des salles prédéfinis
 public static LittleRoom[][] fightRooms; //tableau de tableau de salle d'ennemis
+public static int[] localPlace; //coordonnée salle courante (quelle porte, quelle fightRoom)
 private static int nbRooms; // nombre de salles principales, utile pour changer le nombre facilement pendant le dev du jeu
 
-public static void createRooms()
+public static void createMainRooms()
 {
+    localPlace = new int[2];
+    localPlace[0] = -1;//hub
+    localPlace[1] = 0;
     nbRooms = 9;
     mainRooms = new LittleRoom[nbRooms];
     fightRooms = new LittleRoom[nbRooms][];
@@ -58,7 +62,7 @@ public static void createRooms()
 
 }
 
-public static void runRooms()
+public static void createFightRooms()
 {
     for(int kiki = 0; kiki<nbRooms; kiki++)
     {
@@ -70,6 +74,61 @@ public static void runRooms()
     }
 }
 
+public static BoardManager redirect(bool up)//monte / descend depuis une fightRoom
+{
+    int[] lP = localPlace;
+    BoardManager direction;
+/*
+Cas 1 :
+il monte
+ Cas 1.1 :
+ vers une fightRoom (milieu de tableau)
+
+ Cas 1.2 :
+ vers une mainRoom (fin de tableau)
+
+Cas 2 :
+il descend
+ Cas 2.1 :
+ vers une fightRoom (milieu de tableau)
+
+ Cas 2.2 :
+ vers le hub (début de tableau)
+*/
+
+    if(up)
+    {
+        if(lP[1] == fightRooms[lP[0]].Length -1) //avancé du chemin = à longueur du chemin -1 || dernière salle chemin
+        {
+            direction = mainRooms[lP[0]].getBoardM();//donne le BoardM de la mainRoom associé à ce chemin
+        }
+        else
+        {
+            lP[1]++;
+            direction =  fightRooms[lP[0]][lP[1]].getBoardM();
+        }
+    }
+    else
+    {
+        if(lP[1]==0)
+        {
+            direction = null/**/; //mettre le BoardM du hub
+        }
+        else
+        {
+            lP[1]--;
+            direction =  fightRooms[lP[0]][lP[1]].getBoardM();
+        }
+    }
+    return direction;
+}
+
+/*
+pour l
+
+
+*/
+
 private static int randomLength(int i)
 {
     int k = 1;
@@ -79,7 +138,5 @@ private static int randomLength(int i)
     }
     return k;
 }
-
-
 
 }
