@@ -1,7 +1,13 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - ChangeScene
+    - BoardManager
+    - Enemy
+    - GameManager
+    - Loader
+    - MoveForward
+    - Player
+    - Wall
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
@@ -19,14 +25,8 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
-    - UnityEngine.UI.Button
-    - UnityEngine.UI.CanvasScaler
-    - UnityEngine.UI.GraphicRaycaster
-    - UnityEngine.UI.Image
-    - UnityEngine.UI.Text
-    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
-    Assets/Scenes/Hub.unity:
+    Assets/Scenes/Main.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -39,82 +39,55 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11266}
+      Script: {instanceID: 11412}
     - Class: 114
-      Script: {instanceID: 11560}
+      Script: {instanceID: 11482}
     - Class: 114
-      Script: {instanceID: 11614}
+      Script: {instanceID: 12316}
     - Class: 114
-      Script: {instanceID: 12282}
+      Script: {instanceID: 12624}
     - Class: 114
-      Script: {instanceID: 13764}
+      Script: {instanceID: 12936}
     - Class: 114
-      Script: {instanceID: 14378}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/Menu Principal.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
+      Script: {instanceID: 13016}
     - Class: 114
-      Script: {instanceID: 11266}
+      Script: {instanceID: 13198}
     - Class: 114
-      Script: {instanceID: 11614}
+      Script: {instanceID: 14414}
     - Class: 114
-      Script: {instanceID: 12282}
+      Script: {instanceID: 14432}
     - Class: 114
-      Script: {instanceID: 12992}
-    - Class: 114
-      Script: {instanceID: 13136}
-    - Class: 114
-      Script: {instanceID: 13562}
-    - Class: 114
-      Script: {instanceID: 13764}
-    - Class: 114
-      Script: {instanceID: 14378}
+      Script: {instanceID: 21740}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
     - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -149,7 +122,7 @@ ScriptsOnlyBuild:
     className: ChocoBall
   - hash:
       serializedVersion: 2
-      Hash: cb07b23dc0d8e10f84065aac2c4dd143
+      Hash: 74b119c71349a68aa9baa04de06552d9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -161,7 +134,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 58427678d96303c329ef52df2dd77aa2
+      Hash: c7400eb6888ec9d8aba48391bdf57024
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -383,7 +356,7 @@ ScriptsOnlyBuild:
     className: HealthbarBehavior
   - hash:
       serializedVersion: 2
-      Hash: 280efdc7379182eee1dfcebe9c671685
+      Hash: 812edc6cf9150cc989c83df4912fee25
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BoardManager
@@ -419,7 +392,7 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
-      Hash: a3bd203e7ca1e9b833ac20bc57a059f9
+      Hash: d2b30a1909048e51d1ea561639d280e1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -455,7 +428,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 9fddca16ea52139fdc0149083e5e15ab
+      Hash: ad022d9c2c4fddbfe7eb853a6b7db426
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Wall
@@ -569,6 +542,12 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
+      Hash: 59ce136effd8e0695daa730731c56029
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Dialogue
+  - hash:
+      serializedVersion: 2
       Hash: 8cd1cbba27f3cb1717254f668e9e0d5a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -635,7 +614,7 @@ ScriptsOnlyBuild:
     className: StandaloneInputModule
   - hash:
       serializedVersion: 2
-      Hash: 52e884dddec7dc9973c2c36b1968b37c
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MoveForward
@@ -671,6 +650,5 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 5
   scenePathNames:
-  - Assets/Scenes/Menu Principal.unity
-  - Assets/Scenes/Hub.unity
-  playerPath: C:/Users/Megaport/Desktop/Les-Paumiers/build/CGJ.exe
+  - Assets/Scenes/Main.unity
+  playerPath: C:/Users/Megaport/Desktop/Les-Paumiers/FINAL DE CHEZ FINAL/CGJ.exe

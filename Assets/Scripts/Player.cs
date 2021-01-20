@@ -20,6 +20,14 @@ public class Player : MonoBehaviour
 
     public GameObject projectile;
 
+    public AudioSource audio;
+    public AudioClip[] steps;
+    public AudioClip[] shot;
+    public AudioClip zoneTransfer;
+    public AudioClip colision;
+    public AudioClip recupItem;
+    public int t=0;
+
 
     private void onDisable() //re charge la valeur de la food pour le prochain lvl
     {
@@ -60,6 +68,7 @@ public class Player : MonoBehaviour
             Instantiate(projectile, transform.position, Quaternion.identity);
             chocolat -= 2;
             checkIfGameOver();
+            joueShot(Random.Range(0,11));
         }
     }
 
@@ -71,28 +80,54 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(Vector2.up*speed*Time.fixedDeltaTime);
+             if (!(Input.GetKey(KeyCode.LeftArrow)||(Input.GetKey(KeyCode.RightArrow))||(Input.GetKey(KeyCode.DownArrow))))
+            {
+                if (t%25==0){
+                    joueStep(Random.Range(0, 6));
+                }
+            }
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.Translate(Vector2.down * speed * Time.fixedDeltaTime);
+            if (!(Input.GetKey(KeyCode.LeftArrow)||(Input.GetKey(KeyCode.RightArrow))))
+            {
+                if (t%25==0){
+                    joueStep(Random.Range(0, 6));
+                }
+            }
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(Vector2.right * speed * Time.fixedDeltaTime);
+            if (!(Input.GetKey(KeyCode.LeftArrow)))
+            {
+                if (t%25==0){
+                    joueStep(Random.Range(0, 6));
+                }
+            }
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Vector2.left * speed * Time.fixedDeltaTime);
+             if (t%25==0){
+                    joueStep(Random.Range(0, 6));
+                }
         }
-
+        t++;
       
-
-
     }
-
+    void joueStep(int index)
+    {
+        AudioSource.PlayClipAtPoint(steps[index], transform.position);
+    }
+    void joueShot(int index)
+    {
+        AudioSource.PlayClipAtPoint(shot[index], transform.position);
+    }
 
 
     private void OnTriggerEnter2D (Collider2D other)//permet au player d'interagir avec les autres objets

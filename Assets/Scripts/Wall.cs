@@ -7,6 +7,8 @@ public class Wall : MonoBehaviour
     public Sprite dmgSprite;
     public int hp = 2;
 
+    public AudioClip chop;
+    public AudioSource audio;
     private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
@@ -23,6 +25,7 @@ public class Wall : MonoBehaviour
         if (hp <= 0)
         {
             gameObject.SetActive(false);
+            AudioSource.PlayClipAtPoint(chop, transform.position);
         }
     }
 }

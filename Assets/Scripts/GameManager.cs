@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public Player player;
     [SerializeField]
     private List<Enemy> enemies;
+    public AudioSource audio;
+    public AudioClip clip;
 
     public int GetLevel()
     {
