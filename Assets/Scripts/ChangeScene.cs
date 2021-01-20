@@ -8,7 +8,7 @@ public class ChangeScene : MonoBehaviour
 {
     public void MainScene()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Hub");
     }
 
     public void OptionScene()

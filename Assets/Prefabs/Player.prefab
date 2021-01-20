@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 5069939577554557256}
   - component: {fileID: 9007568103466237273}
   - component: {fileID: 5069939577554557260}
+  - component: {fileID: 888024549183388336}
   m_Layer: 3
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +51,6 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -73,9 +73,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1745663719
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7129095830132715352, guid: cb7215bddf361ec4a9d477f22bc0b7c4, type: 3}
+  m_Sprite: {fileID: -7129095830132715352, guid: cb7215bddf361ec4a9d477f22bc0b7c4,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -164,3 +165,45 @@ MonoBehaviour:
   pointsLossAttack: 1
   chocolat: 100
   speed: 3
+  audio: {fileID: 0}
+  steps:
+  - {fileID: 8300000, guid: 5ac98b4cbf56a24428417e6a1d27db21, type: 3}
+  - {fileID: 8300000, guid: 500eb82eab90de145a248f86ac09bad7, type: 3}
+  - {fileID: 8300000, guid: 7ee06fd97f456b847af386593e8ad8ef, type: 3}
+  - {fileID: 8300000, guid: 8082e1c9a0bb6754e8da04417472fda2, type: 3}
+  - {fileID: 8300000, guid: c5d72fafb64ae2a468ce68cebd94068a, type: 3}
+  - {fileID: 8300000, guid: 6246daef42623a047a521ed0e4f8fdf1, type: 3}
+  - {fileID: 8300000, guid: 4af87da95af0e0e45a72edc0815c423a, type: 3}
+  shot:
+  - {fileID: 8300000, guid: fcf4147dd0ae7474385a91dc334f0038, type: 3}
+  - {fileID: 8300000, guid: be9e49c5c4c557447a37e53c55c6cdb1, type: 3}
+  - {fileID: 8300000, guid: 68d4eb80ea6c0f14a8b5e05f2df1af97, type: 3}
+  - {fileID: 8300000, guid: 987d86f8db74e9f41ab677c0b4df0f40, type: 3}
+  - {fileID: 8300000, guid: af2bf99dcdbc33e47aacd08b7af3e635, type: 3}
+  - {fileID: 8300000, guid: 04be5d148e65dd14ca54de32db1d5fec, type: 3}
+  - {fileID: 8300000, guid: 85168b6392f291f4787e992b126f06f6, type: 3}
+  - {fileID: 8300000, guid: a57f7ccfb68d1ba418aa01f5e4d63349, type: 3}
+  - {fileID: 8300000, guid: 8b0886042eefce04ca7e8c0fd571479b, type: 3}
+  - {fileID: 8300000, guid: 7130cd511c1018742ae1706b2b9121ec, type: 3}
+  - {fileID: 8300000, guid: 7f8fe9c7731b5dc4082b4192ca4bcd29, type: 3}
+  - {fileID: 8300000, guid: 6ee72bcaccb6bcc4da7ad3130a932bfd, type: 3}
+  zoneTransfer: {fileID: 8300000, guid: 10224ddf3adf13f40b4fa64ae709ef87, type: 3}
+  colision: {fileID: 8300000, guid: 0e48c3a5b1294634b9437f41e79322a7, type: 3}
+  recupItem: {fileID: 8300000, guid: 4820fc19c9215c14998f9afa2d5ed006, type: 3}
+  music: {fileID: 8300000, guid: efda35254632712409dc5dc25b7a8f26, type: 3}
+  musical: {fileID: 0}
+  t: 0
+--- !u!114 &888024549183388336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069939577554557271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d1cc929079b94f478907c1edad5fb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 0}
+  music: {fileID: 0}
