@@ -33,6 +33,7 @@ public class Dialogue : MonoBehaviour
         {
             canvas.SetActive(false);
             AudioSource.PlayClipAtPoint(valid, transform.position);
+            dialogue=false;
         }
     }
     void playNext(){
