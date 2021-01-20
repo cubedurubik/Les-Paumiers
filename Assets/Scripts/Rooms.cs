@@ -23,10 +23,11 @@ public static void runRooms(int nbr, int nBoss)//paramètre : nombre salle, et n
         organisation : 0 -> salle 1, ouverte ; 1:6 -> salle 2:7 -> fermées;
         8 -> salle boss -> fermée ; 9+ -> salles bonus -> ouvertes */
     //construction de toutes les salles :
-    for(int i = 0; i < nbRooms; i++)
+    for(int kiki = 0; kiki < nbRooms; kiki++)//petiteuh markeuh perso
     {
-        order[i] = i;
-        mainRooms[i] = new LittleRoom(i, false, null);//marche pas pour le moment
+        order[kiki] = kiki;//profite de la boucle pour remplir le tableau
+
+        mainRooms[kiki] = new LittleRoom(kiki, false, null);//marche pas pour le moment
     }
 
     //ouvre la salle du départ
@@ -42,25 +43,37 @@ public static void runRooms(int nbr, int nBoss)//paramètre : nombre salle, et n
     {
         fightRooms[i] = new LittleRoom(i);
     }
+
+    order = shuffleOrder();
 }
+
+
 
 private static int[] shuffleOrder()
 {
     //créer un tableau contenant les rangs des salles hors salle 1 et salle du boss
     int[] tabRank = new int[nbRooms-2];
-    for(int i = 1; i < numBossRoom - 1; i++)
+    for(int i = 1; i < numBossRoom - 1; i++)//numéro partie après salle 1 et avant boss
     {
         tabRank[i-1] = i;
     }
-    for(int i = nbRooms - 1 ; i > numBossRoom - 1 ; i--)
+    for(int i = nbRooms - 1 ; i > numBossRoom - 1 ; i--)//numéro seconde partie après boss (s'il y a)
     {
         tabRank[i -2] = i;
     }
 
-    //créer un tableau avec les rangs des salles mélangés d'une façon... *bricolé*
+    //créer un tableau avec les rangs des salles mélangés d'une façon... *exotique*
     int[] tabRankShuff = new int[nbRooms-2];
-    return tabRank;
+    int k;
+    for(int i = nbRooms-2 -1; i >= 0; i--)//nbRooms-2 -> 2 chambre en moins, -1 -> index donc -1
+    {
+        k = Random.Range(0, i+1); //de 0 inclu à i+1 exclu
+        tabRankShuff[i] = tabRank[k]; //copie une valeur de rang aléatoire dans le tabShuff
+        tabRank[k] = tabRank[i]; //échange la valeur aléatoire avec la "dernière" valeur
+    }
+    tabRankShuff[0] = tabRank[0];
 
+    return tabRankShuff;
 }
 
 }
