@@ -3,77 +3,83 @@ using Random = UnityEngine.Random;
 
 public class Rooms
 {
+/*
+Procédure :
 
-public static LittleRoom[] mainRooms;  //tableau des salles prédéfinis, première et dernière salles fixent
-public static LittleRoom[] fightRooms; //tableau des salles à ennemis
-public static int[] order;//ordre des salles
+utiliser une fois Rooms.createRooms(nbr, nBoss)
+cela créer les salles qui seront fixent et mémorise certain paramètre
+
+ensuite, à chaque début de partie / mort utiliser Rooms.runRooms()
+cela créra des chemins plus ou moins longs.
+
+
+*/
+public static LittleRoom[] mainRooms;  //tableau des salles prédéfinis
+public static LittleRoom[][] fightRooms; //tableau de tableau de salle d'ennemis
 private static int nbRooms; // nombre de salles principales, utile pour changer le nombre facilement pendant le dev du jeu
-private static int numBossRoom;//numéro salle du boss (!= rang)
 
-
-public static void runRooms(int nbr, int nBoss)//paramètre : nombre salle, et numéro de la salle du boss pour créer les salles bonus
+public static void createRooms()
 {
-    nbRooms = nbr;
-    numBossRoom = nBoss;
-    order = new int[nbRooms];
+    nbRooms = 9;
     mainRooms = new LittleRoom[nbRooms];
-    fightRooms = new LittleRoom[nbRooms];
-
+    fightRooms = new LittleRoom[nbRooms][];
     /*construction des salles :
-        organisation : 0 -> salle 1, ouverte ; 1:6 -> salle 2:7 -> fermées;
+        organisation actuellle : 0 -> salle 1, ouverte ; 1:6 -> salle 2:7 -> fermées;
         8 -> salle boss -> fermée ; 9+ -> salles bonus -> ouvertes */
-    //construction de toutes les salles :
-    for(int kiki = 0; kiki < nbRooms; kiki++)//petiteuh markeuh perso
-    {
-        order[kiki] = kiki;//profite de la boucle pour remplir le tableau
+    //construction de toutes les salles principales :
+    
 
-        mainRooms[kiki] = new LittleRoom(kiki, false, null);//marche pas pour le moment
-    }
+    //s01  : îles  ( -> n')
+    mainRooms[0] = new LittleRoom(0, null/**/);//marche pas pour le moment
 
-    //ouvre la salle du départ
-    //(et les salles bonus si on a le temps de les faires)
-    mainRooms[0].setLock(true);// ouvre la salle 1
+    //s02  : n'    ( -> eau)
+    mainRooms[1] = new LittleRoom(1, null/**/);//marche pas pour le moment
 
-    for(int i = numBossRoom; i < nbRooms; i ++)// ouvre salles bonus
-    {
-        mainRooms[0].setLock(true);
-    }
+    //s03  : eau   ( -> rat)
+    mainRooms[2] = new LittleRoom(2, null/**/);//marche pas pour le moment
 
-    for(int i = 0; i < numBossRoom - 1; i ++)//créer 1 fightRoom par mainRoom
-    {
-        fightRooms[i] = new LittleRoom(i);
-    }
+    //s04  : rat   ( -> nid (double salle partie 1))
+    mainRooms[3] = new LittleRoom(3, null/**/);//marche pas pour le moment
 
-    order = shuffleOrder();
+    //s05  : nid   ( -> or)
+    mainRooms[4] = new LittleRoom(4, null/**/);//marche pas pour le moment
+
+    //s06  : or    ( -> nid (double salle partie 2))
+    mainRooms[5] = new LittleRoom(5, null/**/);//marche pas pour le moment
+
+    //s07  : nid   ( -> argent)
+    mainRooms[6] = new LittleRoom(6, null/**/);//marche pas pour le moment
+
+    //s08 : argent ( -> Boss)
+    mainRooms[7] = new LittleRoom(7, null/**/);//marche pas pour le moment
+
+    //s09 : Boss
+    mainRooms[8] = new LittleRoom(8, null/**/);//marche pas pour le moment
+
 }
 
-
-
-private static int[] shuffleOrder()
+public static void runRooms()
 {
-    //créer un tableau contenant les rangs des salles hors salle 1 et salle du boss
-    int[] tabRank = new int[nbRooms-2];
-    for(int i = 1; i < numBossRoom - 1; i++)//numéro partie après salle 1 et avant boss
+    for(int kiki = 0; kiki<nbRooms; kiki++)
     {
-        tabRank[i-1] = i;
+        fightRooms[kiki] = new LittleRoom[randomLength(kiki)];
+        for(int i = 0; i < fightRooms[kiki].Length; i++)
+        {
+            fightRooms[kiki][i] = new LittleRoom(kiki);
+        }
     }
-    for(int i = nbRooms - 1 ; i > numBossRoom - 1 ; i--)//numéro seconde partie après boss (s'il y a)
-    {
-        tabRank[i -2] = i;
-    }
-
-    //créer un tableau avec les rangs des salles mélangés d'une façon... *exotique*
-    int[] tabRankShuff = new int[nbRooms-2];
-    int k;
-    for(int i = nbRooms-2 -1; i >= 0; i--)//nbRooms-2 -> 2 chambre en moins, -1 -> index donc -1
-    {
-        k = Random.Range(0, i+1); //de 0 inclu à i+1 exclu
-        tabRankShuff[i] = tabRank[k]; //copie une valeur de rang aléatoire dans le tabShuff
-        tabRank[k] = tabRank[i]; //échange la valeur aléatoire avec la "dernière" valeur
-    }
-    tabRankShuff[0] = tabRank[0];
-
-    return tabRankShuff;
 }
+
+private static int randomLength(int i)
+{
+    int k = 1;
+    while(Random.Range(0,i*2)+1 >= k)
+    {
+        k++;
+    }
+    return k;
+}
+
+
 
 }
